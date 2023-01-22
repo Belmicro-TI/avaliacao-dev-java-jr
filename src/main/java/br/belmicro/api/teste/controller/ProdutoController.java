@@ -20,12 +20,18 @@ import br.belmicro.api.teste.service.ProdutoService;
 @RestController
 public class ProdutoController {
 	
-	@Autowired
-	ProdutoService produtoService;
+
+	private final ProdutoService produtoService;
+
 	
-	@Autowired
-	HttpServletRequest request;
-	
+
+	 private final HttpServletRequest request;
+
+	public ProdutoController(ProdutoService produtoService, HttpServletRequest request) {
+		this.produtoService = produtoService;
+		this.request = request;
+	}
+
 	@GetMapping("/")
 	public ResponseEntity<List<Produto>> getProdutos(){
 		return ResponseEntity.ok(produtoService.getAll());

@@ -29,7 +29,7 @@ public class Dados {
 		
 	}
 	
-	private void addDadoList(String nome, float valor) {
+	private void addDadoList(final String nome, final float valor) {
 		Produto prd = new Produto();
 		prd.setId(UUID.randomUUID());
 		prd.setNome(nome);

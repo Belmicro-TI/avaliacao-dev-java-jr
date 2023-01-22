@@ -12,11 +12,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProdutoService {
 
-	@Autowired
-	private Dados dados;
-	
+	private final Dados dados;
 
-		
+	public ProdutoService(Dados dados) {
+		this.dados = dados;
+	}
+
 	public List<Produto> getAll(){
 		return dados.getProdutos();
 	}
